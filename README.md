@@ -1,7 +1,6 @@
 # Talk2SQL
-"Local LLM (Llama 3.1 + Ollama) text-to-SQL tool for Snowflake — no cloud API required."
 
-# Talk2SQL
+"Local LLM (Llama 3.1 + Ollama) text-to-SQL tool for Snowflake — no cloud API required."
 
 Ask questions in plain English, get answers from Snowflake — using a local LLM (Llama 3.1 via Ollama) to generate SQL instead of a cloud API.
 
