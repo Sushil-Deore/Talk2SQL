@@ -1,0 +1,282 @@
+[0m10:04:18.103573 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c050810>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f5a3490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f5a3fd0>]}
+
+
+============================== 10:04:18.108977 | e17cbdfd-6342-4f32-b287-4ba90c662de9 ==============================
+[0m10:04:18.108977 [info ] [MainThread]: Running with dbt=1.11.12
+[0m10:04:18.109638 [debug] [MainThread]: running dbt with arguments {'warn_error': 'None', 'printer_width': '80', 'write_json': 'True', 'invocation_command': 'dbt init rag_analytics', 'version_check': 'True', 'cache_selected_only': 'False', 'quiet': 'False', 'empty': 'None', 'fail_fast': 'False', 'log_format': 'default', 'introspect': 'True', 'target_path': 'None', 'use_experimental_parser': 'False', 'log_path': 'logs', 'log_cache_events': 'False', 'indirect_selection': 'eager', 'use_colors': 'True', 'debug': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'profiles_dir': '/Users/sushildeore/.dbt', 'no_print': 'None', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'static_parser': 'True'}
+[0m10:04:18.120661 [debug] [MainThread]: Starter project path: /Users/sushildeore/Downloads/Agents/Amazon RAG Analytics Pipeline/venv2/lib/python3.11/site-packages/dbt/include/starter_project
+[0m10:04:18.125994 [info ] [MainThread]: 
+Your new dbt project "rag_analytics" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m10:04:18.126411 [info ] [MainThread]: Setting up your profile.
+[0m10:04:20.525482 [error] [MainThread]: Encountered an error:
+dlopen(/Users/sushildeore/Downloads/Agents/Amazon RAG Analytics Pipeline/venv2/lib/python3.11/site-packages/cryptography/hazmat/bindings/_rust.abi3.so, 0x0002): symbol not found in flat namespace '_EVP_DigestSqueeze'
+[0m10:04:20.531245 [error] [MainThread]: Traceback (most recent call last):
+  File "/Users/sushildeore/Downloads/Agents/Amazon RAG Analytics Pipeline/venv2/lib/python3.11/site-packages/dbt/cli/requires.py", line 182, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sushildeore/Downloads/Agents/Amazon RAG Analytics Pipeline/venv2/lib/python3.11/site-packages/dbt/cli/requires.py", line 128, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sushildeore/Downloads/Agents/Amazon RAG Analytics Pipeline/venv2/lib/python3.11/site-packages/dbt/cli/main.py", line 488, in init
+    results = task.run()
+              ^^^^^^^^^^
+  File "/Users/sushildeore/Downloads/Agents/Amazon RAG Analytics Pipeline/venv2/lib/python3.11/site-packages/dbt/task/init.py", line 346, in run
+    self.setup_profile(profile_name)
+  File "/Users/sushildeore/Downloads/Agents/Amazon RAG Analytics Pipeline/venv2/lib/python3.11/site-packages/dbt/task/init.py", line 262, in setup_profile
+    self.create_profile_from_target(adapter, profile_name=profile_name)
+  File "/Users/sushildeore/Downloads/Agents/Amazon RAG Analytics Pipeline/venv2/lib/python3.11/site-packages/dbt/task/init.py", line 172, in create_profile_from_target
+    load_plugin(adapter)
+  File "/Users/sushildeore/Downloads/Agents/Amazon RAG Analytics Pipeline/venv2/lib/python3.11/site-packages/dbt/adapters/factory.py", line 239, in load_plugin
+    return FACTORY.load_plugin(name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sushildeore/Downloads/Agents/Amazon RAG Analytics Pipeline/venv2/lib/python3.11/site-packages/dbt/adapters/factory.py", line 68, in load_plugin
+    mod: Any = import_module("." + name, "dbt.adapters")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.11/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/Users/sushildeore/Downloads/Agents/Amazon RAG Analytics Pipeline/venv2/lib/python3.11/site-packages/dbt/adapters/snowflake/__init__.py", line 3, in <module>
+    from dbt.adapters.snowflake.connections import SnowflakeConnectionManager
+  File "/Users/sushildeore/Downloads/Agents/Amazon RAG Analytics Pipeline/venv2/lib/python3.11/site-packages/dbt/adapters/snowflake/connections.py", line 22, in <module>
+    from cryptography.hazmat.primitives import serialization
+  File "/Users/sushildeore/Downloads/Agents/Amazon RAG Analytics Pipeline/venv2/lib/python3.11/site-packages/cryptography/hazmat/primitives/serialization/__init__.py", line 7, in <module>
+    from cryptography.hazmat.primitives._serialization import (
+  File "/Users/sushildeore/Downloads/Agents/Amazon RAG Analytics Pipeline/venv2/lib/python3.11/site-packages/cryptography/hazmat/primitives/_serialization.py", line 10, in <module>
+    from cryptography.hazmat.bindings._rust import Encoding as Encoding
+ImportError: dlopen(/Users/sushildeore/Downloads/Agents/Amazon RAG Analytics Pipeline/venv2/lib/python3.11/site-packages/cryptography/hazmat/bindings/_rust.abi3.so, 0x0002): symbol not found in flat namespace '_EVP_DigestSqueeze'
+
+[0m10:04:20.536918 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": false, "command_wall_clock_time": 2.5341153, "process_in_blocks": "0", "process_kernel_time": 0.236998, "process_mem_max_rss": "111996928", "process_out_blocks": "0", "process_user_time": 1.263312}
+[0m10:04:20.538153 [debug] [MainThread]: Command `dbt init` failed at 10:04:20.537750 after 2.54 seconds
+[0m10:04:20.539093 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f57c2d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f57f9d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10a281d10>]}
+[0m10:04:20.539790 [debug] [MainThread]: Flushing usage events
+[0m10:04:20.848381 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m10:10:24.351195 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1101b2c90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1136d7c10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1136d7f90>]}
+
+
+============================== 10:10:24.357042 | ec4e1582-1543-43d7-996c-d917256e7df5 ==============================
+[0m10:10:24.357042 [info ] [MainThread]: Running with dbt=1.11.12
+[0m10:10:24.357735 [debug] [MainThread]: running dbt with arguments {'use_colors': 'True', 'log_cache_events': 'False', 'quiet': 'False', 'log_format': 'default', 'fail_fast': 'False', 'version_check': 'True', 'partial_parse': 'True', 'log_path': 'logs', 'printer_width': '80', 'indirect_selection': 'eager', 'introspect': 'True', 'invocation_command': 'dbt init rag_analytics', 'debug': 'False', 'no_print': 'None', 'empty': 'None', 'target_path': 'None', 'warn_error': 'None', 'use_experimental_parser': 'False', 'profiles_dir': '/Users/sushildeore/.dbt', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'write_json': 'True', 'static_parser': 'True', 'cache_selected_only': 'False', 'send_anonymous_usage_stats': 'True'}
+[0m10:10:24.373696 [info ] [MainThread]: A project called rag_analytics already exists here.
+[0m10:10:24.377764 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 0.12836722, "process_in_blocks": "0", "process_kernel_time": 0.242068, "process_mem_max_rss": "110530560", "process_out_blocks": "0", "process_user_time": 1.252505}
+[0m10:10:24.378606 [debug] [MainThread]: Command `dbt init` succeeded at 10:10:24.378268 after 0.13 seconds
+[0m10:10:24.379558 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1136b27d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1136da4d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e3f1510>]}
+[0m10:10:24.380034 [debug] [MainThread]: Flushing usage events
+[0m10:10:24.607939 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m18:44:24.739241 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11365fdd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x113687610>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x113687d10>]}
+
+
+============================== 18:44:24.745749 | 6b09b77d-a824-47fa-9c50-bdfbc823938a ==============================
+[0m18:44:24.745749 [info ] [MainThread]: Running with dbt=1.11.12
+[0m18:44:24.746476 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'target_path': 'None', 'no_print': 'None', 'invocation_command': 'dbt init rag_analytics', 'write_json': 'True', 'use_colors': 'True', 'empty': 'None', 'debug': 'False', 'fail_fast': 'False', 'warn_error': 'None', 'send_anonymous_usage_stats': 'True', 'use_experimental_parser': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'quiet': 'False', 'version_check': 'True', 'cache_selected_only': 'False', 'log_path': 'logs', 'static_parser': 'True', 'introspect': 'True', 'profiles_dir': '/Users/sushildeore/.dbt', 'indirect_selection': 'eager', 'partial_parse': 'True', 'log_format': 'default', 'log_cache_events': 'False'}
+[0m18:44:24.764860 [debug] [MainThread]: Starter project path: /Users/sushildeore/Downloads/Agents/Amazon RAG Analytics Pipeline/venv2/lib/python3.11/site-packages/dbt/include/starter_project
+[0m18:44:24.772162 [info ] [MainThread]: 
+Your new dbt project "rag_analytics" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m18:44:24.773220 [info ] [MainThread]: Setting up your profile.
+[0m18:44:30.220001 [error] [MainThread]: Encountered an error:
+dlopen(/Users/sushildeore/Downloads/Agents/Amazon RAG Analytics Pipeline/venv2/lib/python3.11/site-packages/cryptography/hazmat/bindings/_rust.abi3.so, 0x0002): symbol not found in flat namespace '_EVP_DigestSqueeze'
+[0m18:44:30.225149 [error] [MainThread]: Traceback (most recent call last):
+  File "/Users/sushildeore/Downloads/Agents/Amazon RAG Analytics Pipeline/venv2/lib/python3.11/site-packages/dbt/cli/requires.py", line 182, in wrapper
+    result, success = func(*args, **kwargs)
+                      ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sushildeore/Downloads/Agents/Amazon RAG Analytics Pipeline/venv2/lib/python3.11/site-packages/dbt/cli/requires.py", line 128, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sushildeore/Downloads/Agents/Amazon RAG Analytics Pipeline/venv2/lib/python3.11/site-packages/dbt/cli/main.py", line 488, in init
+    results = task.run()
+              ^^^^^^^^^^
+  File "/Users/sushildeore/Downloads/Agents/Amazon RAG Analytics Pipeline/venv2/lib/python3.11/site-packages/dbt/task/init.py", line 346, in run
+    self.setup_profile(profile_name)
+  File "/Users/sushildeore/Downloads/Agents/Amazon RAG Analytics Pipeline/venv2/lib/python3.11/site-packages/dbt/task/init.py", line 262, in setup_profile
+    self.create_profile_from_target(adapter, profile_name=profile_name)
+  File "/Users/sushildeore/Downloads/Agents/Amazon RAG Analytics Pipeline/venv2/lib/python3.11/site-packages/dbt/task/init.py", line 172, in create_profile_from_target
+    load_plugin(adapter)
+  File "/Users/sushildeore/Downloads/Agents/Amazon RAG Analytics Pipeline/venv2/lib/python3.11/site-packages/dbt/adapters/factory.py", line 239, in load_plugin
+    return FACTORY.load_plugin(name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/sushildeore/Downloads/Agents/Amazon RAG Analytics Pipeline/venv2/lib/python3.11/site-packages/dbt/adapters/factory.py", line 68, in load_plugin
+    mod: Any = import_module("." + name, "dbt.adapters")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/anaconda3/lib/python3.11/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1204, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1176, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1147, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "/Users/sushildeore/Downloads/Agents/Amazon RAG Analytics Pipeline/venv2/lib/python3.11/site-packages/dbt/adapters/snowflake/__init__.py", line 3, in <module>
+    from dbt.adapters.snowflake.connections import SnowflakeConnectionManager
+  File "/Users/sushildeore/Downloads/Agents/Amazon RAG Analytics Pipeline/venv2/lib/python3.11/site-packages/dbt/adapters/snowflake/connections.py", line 22, in <module>
+    from cryptography.hazmat.primitives import serialization
+  File "/Users/sushildeore/Downloads/Agents/Amazon RAG Analytics Pipeline/venv2/lib/python3.11/site-packages/cryptography/hazmat/primitives/serialization/__init__.py", line 7, in <module>
+    from cryptography.hazmat.primitives._serialization import (
+  File "/Users/sushildeore/Downloads/Agents/Amazon RAG Analytics Pipeline/venv2/lib/python3.11/site-packages/cryptography/hazmat/primitives/_serialization.py", line 10, in <module>
+    from cryptography.hazmat.bindings._rust import Encoding as Encoding
+ImportError: dlopen(/Users/sushildeore/Downloads/Agents/Amazon RAG Analytics Pipeline/venv2/lib/python3.11/site-packages/cryptography/hazmat/bindings/_rust.abi3.so, 0x0002): symbol not found in flat namespace '_EVP_DigestSqueeze'
+
+[0m18:44:30.230569 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": false, "command_wall_clock_time": 5.601089, "process_in_blocks": "0", "process_kernel_time": 0.818928, "process_mem_max_rss": "110587904", "process_out_blocks": "0", "process_user_time": 1.220341}
+[0m18:44:30.231730 [debug] [MainThread]: Command `dbt init` failed at 18:44:30.231236 after 5.60 seconds
+[0m18:44:30.232546 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1135f2250>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1135f1990>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x113527e50>]}
+[0m18:44:30.233048 [debug] [MainThread]: Flushing usage events
+[0m18:44:30.581991 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m18:46:42.385144 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e6dfd10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e83f890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e81a910>]}
+
+
+============================== 18:46:42.391005 | 0a7d1cb3-157b-4316-a247-5a1bf46d99bf ==============================
+[0m18:46:42.391005 [info ] [MainThread]: Running with dbt=1.11.12
+[0m18:46:42.391696 [debug] [MainThread]: running dbt with arguments {'log_format': 'default', 'debug': 'False', 'version_check': 'True', 'static_parser': 'True', 'invocation_command': 'dbt init rag_analytics', 'log_cache_events': 'False', 'cache_selected_only': 'False', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'use_experimental_parser': 'False', 'profiles_dir': '/Users/sushildeore/.dbt', 'printer_width': '80', 'no_print': 'None', 'empty': 'None', 'introspect': 'True', 'indirect_selection': 'eager', 'partial_parse': 'True', 'target_path': 'None', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'use_colors': 'True', 'fail_fast': 'False', 'log_path': 'logs', 'write_json': 'True', 'warn_error': 'None'}
+[0m18:46:42.407909 [info ] [MainThread]: A project called rag_analytics already exists here.
+[0m18:46:42.411353 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 0.12536654, "process_in_blocks": "0", "process_kernel_time": 0.242106, "process_mem_max_rss": "110714880", "process_out_blocks": "0", "process_user_time": 1.224136}
+[0m18:46:42.412163 [debug] [MainThread]: Command `dbt init` succeeded at 18:46:42.411835 after 0.13 seconds
+[0m18:46:42.412640 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e7a9c90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e7a2250>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10e44b8d0>]}
+[0m18:46:42.413066 [debug] [MainThread]: Flushing usage events
+[0m18:46:42.593811 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m18:46:59.069714 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10f616f90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x112aea690>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x112b25c10>]}
+
+
+============================== 18:46:59.075417 | 821a917b-02b4-4958-8e49-fbb639c28f87 ==============================
+[0m18:46:59.075417 [info ] [MainThread]: Running with dbt=1.11.12
+[0m18:46:59.076141 [debug] [MainThread]: running dbt with arguments {'write_json': 'True', 'cache_selected_only': 'False', 'introspect': 'True', 'send_anonymous_usage_stats': 'True', 'empty': 'None', 'partial_parse': 'True', 'invocation_command': 'dbt init rag_analytics', 'warn_error': 'None', 'log_format': 'default', 'debug': 'False', 'printer_width': '80', 'use_experimental_parser': 'False', 'quiet': 'False', 'version_check': 'True', 'fail_fast': 'False', 'no_print': 'None', 'indirect_selection': 'eager', 'static_parser': 'True', 'use_colors': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'profiles_dir': '/Users/sushildeore/.dbt', 'target_path': 'None', 'log_path': 'logs', 'log_cache_events': 'False'}
+[0m18:46:59.090566 [debug] [MainThread]: Starter project path: /Users/sushildeore/Downloads/Agents/Amazon RAG Analytics Pipeline/venv2/lib/python3.11/site-packages/dbt/include/starter_project
+[0m18:46:59.098310 [info ] [MainThread]: 
+Your new dbt project "rag_analytics" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m18:46:59.098824 [info ] [MainThread]: Setting up your profile.
+[0m18:47:04.080657 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m18:47:04.081444 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m18:47:04.081835 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m18:49:29.727036 [info ] [MainThread]: Profile rag_analytics written to /Users/sushildeore/.dbt/profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m18:49:29.736211 [debug] [MainThread]: Resource report: {"command_name": "init", "command_success": true, "command_wall_clock_time": 150.76492, "process_in_blocks": "0", "process_kernel_time": 0.325486, "process_mem_max_rss": "138362880", "process_out_blocks": "0", "process_user_time": 1.510059}
+[0m18:49:29.738569 [debug] [MainThread]: Command `dbt init` succeeded at 18:49:29.738033 after 150.77 seconds
+[0m18:49:29.739348 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x112ae1fd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x112b56350>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x112a1fd50>]}
+[0m18:49:29.739993 [debug] [MainThread]: Flushing usage events
+[0m18:49:30.061533 [debug] [MainThread]: An error was encountered while trying to flush usage events
+[0m18:49:49.925537 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x112657690>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x112a3f190>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x112a3f8d0>]}
+
+
+============================== 18:49:49.930881 | dff76f9a-d05b-4ba8-b46c-9c75beb408f5 ==============================
+[0m18:49:49.930881 [info ] [MainThread]: Running with dbt=1.11.12
+[0m18:49:49.931540 [debug] [MainThread]: running dbt with arguments {'partial_parse': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'static_parser': 'True', 'debug': 'False', 'fail_fast': 'False', 'log_path': 'logs', 'indirect_selection': 'eager', 'log_format': 'default', 'cache_selected_only': 'False', 'log_cache_events': 'False', 'write_json': 'True', 'empty': 'None', 'profiles_dir': '/Users/sushildeore/.dbt', 'use_experimental_parser': 'False', 'quiet': 'False', 'send_anonymous_usage_stats': 'True', 'introspect': 'True', 'version_check': 'True', 'invocation_command': 'dbt debug', 'use_colors': 'True', 'target_path': 'None', 'no_print': 'None', 'warn_error': 'None'}
+[0m18:49:49.943875 [info ] [MainThread]: dbt version: 1.11.12
+[0m18:49:49.944434 [info ] [MainThread]: python version: 3.11.7
+[0m18:49:49.944804 [info ] [MainThread]: python path: /Users/sushildeore/Downloads/Agents/Amazon RAG Analytics Pipeline/venv2/bin/python3.11
+[0m18:49:49.945122 [info ] [MainThread]: os info: macOS-26.5.2-x86_64-i386-64bit
+[0m18:49:50.304078 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m18:49:50.304925 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m18:49:50.305393 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m18:49:50.367960 [info ] [MainThread]: Using profiles dir at /Users/sushildeore/.dbt
+[0m18:49:50.368550 [info ] [MainThread]: Using profiles.yml file at /Users/sushildeore/.dbt/profiles.yml
+[0m18:49:50.368911 [info ] [MainThread]: Using dbt_project.yml file at /Users/sushildeore/Downloads/Agents/Amazon RAG Analytics Pipeline/dbt_project/dbt_project.yml
+[0m18:49:50.369502 [info ] [MainThread]: adapter type: snowflake
+[0m18:49:50.369888 [info ] [MainThread]: adapter version: 1.11.6
+[0m18:49:50.370217 [info ] [MainThread]: Configuration:
+[0m18:49:50.370502 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m18:49:50.370785 [info ] [MainThread]:   dbt_project.yml file [[31mERROR not found[0m]
+[0m18:49:50.371051 [info ] [MainThread]: Required dependencies:
+[0m18:49:50.371407 [debug] [MainThread]: Executing "git --help"
+[0m18:49:50.398545 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]\n           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]\n           [--config-env=<name>=<envvar>] <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone     Clone a repository into a new directory\n   init      Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add       Add file contents to the index\n   mv        Move or rename a file, a directory, or a symlink\n   restore   Restore working tree files\n   rm        Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect    Use binary search to find the commit that introduced a bug\n   diff      Show changes between commits, commit and working tree, etc\n   grep      Print lines matching a pattern\n   log       Show commit logs\n   show      Show various types of objects\n   status    Show the working tree status\n\ngrow, mark and tweak your common history\n   branch    List, create, or delete branches\n   commit    Record changes to the repository\n   merge     Join two or more development histories together\n   rebase    Reapply commits on top of another base tip\n   reset     Reset current HEAD to the specified state\n   switch    Switch branches\n   tag       Create, list, delete or verify a tag object signed with GPG\n\ncollaborate (see also: git help workflows)\n   fetch     Download objects and refs from another repository\n   pull      Fetch from and integrate with another repository or a local branch\n   push      Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m18:49:50.399961 [debug] [MainThread]: STDERR: "b''"
+[0m18:49:50.400411 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m18:49:50.400787 [info ] [MainThread]: Connection:
+[0m18:49:50.401134 [info ] [MainThread]:   account: DE22188
+[0m18:49:50.401409 [info ] [MainThread]:   user: SushilDeore
+[0m18:49:50.401662 [info ] [MainThread]:   database: my_db
+[0m18:49:50.401913 [info ] [MainThread]:   warehouse: COMPUTE_WH
+[0m18:49:50.402168 [info ] [MainThread]:   role: ACCOUNTADMIN
+[0m18:49:50.402422 [info ] [MainThread]:   schema: staging
+[0m18:49:50.402671 [info ] [MainThread]:   authenticator: None
+[0m18:49:50.402921 [info ] [MainThread]:   oauth_client_id: None
+[0m18:49:50.403168 [info ] [MainThread]:   query_tag: None
+[0m18:49:50.403424 [info ] [MainThread]:   client_session_keep_alive: False
+[0m18:49:50.403673 [info ] [MainThread]:   host: None
+[0m18:49:50.403912 [info ] [MainThread]:   port: None
+[0m18:49:50.404155 [info ] [MainThread]:   proxy_host: None
+[0m18:49:50.404443 [info ] [MainThread]:   proxy_port: None
+[0m18:49:50.404709 [info ] [MainThread]:   protocol: None
+[0m18:49:50.404961 [info ] [MainThread]:   connect_retries: 1
+[0m18:49:50.405213 [info ] [MainThread]:   connect_timeout: None
+[0m18:49:50.405456 [info ] [MainThread]:   retry_on_database_errors: False
+[0m18:49:50.405707 [info ] [MainThread]:   retry_all: False
+[0m18:49:50.405949 [info ] [MainThread]:   insecure_mode: False
+[0m18:49:50.406191 [info ] [MainThread]:   reuse_connections: True
+[0m18:49:50.406438 [info ] [MainThread]:   s3_stage_vpce_dns_name: None
+[0m18:49:50.406688 [info ] [MainThread]:   platform_detection_timeout_seconds: 0.0
+[0m18:49:50.407394 [info ] [MainThread]: Registered adapter: snowflake=1.11.6
+[0m18:49:50.537218 [debug] [MainThread]: Acquiring new snowflake connection 'debug'
+[0m18:49:50.585328 [debug] [MainThread]: Using snowflake connection "debug"
+[0m18:49:50.585736 [debug] [MainThread]: On debug: select 1 as id
+[0m18:49:50.586042 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m18:49:52.190635 [debug] [MainThread]: Snowflake adapter: Error running SQL: select 1 as id
+[0m18:49:52.191297 [debug] [MainThread]: Snowflake adapter: Rolling back transaction.
+[0m18:49:52.194854 [info ] [MainThread]:   Connection test: [[31mERROR[0m]
+
+[0m18:49:52.195464 [info ] [MainThread]: [31m2 checks failed:[0m
+[0m18:49:52.195817 [info ] [MainThread]: Project loading failed for the following reason:
+ project path </Users/sushildeore/Downloads/Agents/Amazon RAG Analytics Pipeline/dbt_project/dbt_project.yml> not found
+
+[0m18:49:52.196152 [info ] [MainThread]: dbt was unable to connect to the specified database.
+The database returned the following error:
+
+  >Database Error
+  290404 (08001): 404 Not Found: post DE22188.snowflakecomputing.com:443/session/v1/login-request
+
+Check your database credentials and try again. For more information, visit:
+https://docs.getdbt.com/docs/configure-your-profile
+
+
+[0m18:49:52.200295 [debug] [MainThread]: Resource report: {"command_name": "debug", "command_success": false, "command_wall_clock_time": 2.377158, "process_in_blocks": "0", "process_kernel_time": 0.462022, "process_mem_max_rss": "165576704", "process_out_blocks": "0", "process_user_time": 2.117302}
+[0m18:49:52.201188 [debug] [MainThread]: Command `dbt debug` failed at 18:49:52.200836 after 2.38 seconds
+[0m18:49:52.201657 [debug] [MainThread]: Connection 'debug' was left open.
+[0m18:49:52.201985 [debug] [MainThread]: On debug: No close available on handle
+[0m18:49:52.202374 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1129aa090>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x115f2c650>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x115f22fd0>]}
+[0m18:49:52.202840 [debug] [MainThread]: Flushing usage events
+[0m18:49:52.340613 [debug] [MainThread]: An error was encountered while trying to flush usage events

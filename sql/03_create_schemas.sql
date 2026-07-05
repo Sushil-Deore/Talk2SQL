@@ -1,0 +1,4 @@
+CREATE SCHEMA IF NOT EXISTS my_db.raw;
+CREATE SCHEMA IF NOT EXISTS my_db.staging;
+
+CREATE SCHEMA IF NOT EXISTS my_db.analytics;

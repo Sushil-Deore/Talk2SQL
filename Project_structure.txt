@@ -1,0 +1,19 @@
+snowflake_project/
+├── sql/
+│   ├── 01_create_warehouse.sql
+│   ├── 02_create_database.sql
+│   ├── 03_create_schemas.sql
+│   ├── 04_create_raw_tables.sql
+│   ├── 05_create_file_formats.sql
+│   ├── 06_load_raw_data.sql
+│   └── 07_validate_load.sql
+├── dbt_project/
+│   ├── models/
+│   │   ├── staging/
+│   │   │   ├── stg_customers.sql
+│   │   │   └── sources.yml
+│   │   └── marts/
+│   │       └── dim_customers.sql
+│   ├── dbt_project.yml
+│   └── profiles.yml (usually kept outside repo, in ~/.dbt/)
+└── README.md
