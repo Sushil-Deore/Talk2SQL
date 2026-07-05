@@ -68,3 +68,5 @@ Same Snowflake data, different approach: [Amazon-Sales-Snowflake-dbt](https://gi
 - "Total sales by category"
 - "How many orders were cancelled"
 - "Top 5 states by order count"
+
+Built with assistance from Claude (Anthropic).
