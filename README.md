@@ -61,8 +61,8 @@ python text_to_sql.py
 
 Update the Snowflake connection details in `text_to_sql.py` (account, user, key path, warehouse, database) before running.
 
-## Data pipeline (reused from a separate project)
-The `SQL/` and `dbt_project/` folders contain the Snowflake + dbt setup used to load and clean the underlying Amazon sales data this tool queries against.
+## Related project
+Same Snowflake data, different approach: [Amazon-Sales-Snowflake-dbt](https://github.com/Sushil-Deore/Amazon-Sales-Snowflake-dbt) uses Snowflake Cortex Analyst (cloud, managed, more accurate). This repo uses a local LLM (Llama 3.1) instead — no API cost, weaker accuracy, more manual work. Pick based on your need.
 
 ## Example questions
 - "Total sales by category"
